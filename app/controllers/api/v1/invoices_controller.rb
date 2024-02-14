@@ -8,7 +8,7 @@ class Api::V1::InvoicesController < Api::V1::BaseController
   def index
     invoices = Invoice.range_invoice_date(params_invoice[:start_date], params_invoice[:end_date])
 
-    render json: invoices
+    render json: { records: invoices.count, data: invoices }
   end
 
   private

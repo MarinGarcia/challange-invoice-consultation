@@ -19,7 +19,7 @@ RSpec.describe Api::V1::InvoicesController, type: :request do
       }
 
       expect(response).to have_http_status(:ok)
-      expect(json.count).to be(2)
+      expect(json['data'].count).to be(2)
     end
 
     context 'when not exist token' do
