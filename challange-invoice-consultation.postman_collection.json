@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "7fb211ea-a98c-46fb-bcac-dee7d04ba809",
+		"name": "challange-invoice-consultation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1651165"
+	},
+	"item": [
+		{
+			"name": "Invoices with filters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiQ29udGFMaW5rIn0.52aon-6GGXFyjc_cOG6fOZhY_YMCwiGwvqQZBQ0RJQw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/invoices?start_date=2022-01-17T09:57:14.000Z&end_date=2022-01-20T07:53:32.000Z",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"invoices"
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2022-01-17T09:57:14.000Z"
+						},
+						{
+							"key": "end_date",
+							"value": "2022-01-20T07:53:32.000Z"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
