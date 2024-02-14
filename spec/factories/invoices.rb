@@ -5,6 +5,6 @@ FactoryBot.define do
     invoice_number { Faker::Invoice.creditor_reference }
     total { Faker::Number.decimal(l_digits: 2) }
     invoice_date { Faker::Time.between(from: DateTime.now - 1, to: DateTime.now) }
-    status { %w[Invoice::CANCELLED Invoice::VALID].sample }
+    status { [Invoice::CANCELLED, Invoice::VALID].sample }
   end
 end
