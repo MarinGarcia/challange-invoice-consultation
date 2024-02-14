@@ -6,7 +6,7 @@ class Api::V1::InvoicesController < Api::V1::BaseController
   rescue_from ActiveRecord::RecordInvalid, with: :invalid
 
   def index
-    invoice = Invoice.first
+    invoice = Invoice.all
 
     render json: invoice
   end
