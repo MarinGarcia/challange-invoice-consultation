@@ -5,14 +5,21 @@ require 'rails_helper'
 RSpec.describe Api::V1::InvoicesController, type: :request do
   describe 'GET /api/v1/invoices' do
     it 'return json with list invoices' do
-      create_list(:invoice, 3)
+      start_date = (Time.now - 1.day).to_s(:no_timezone)
+      end_date = Time.now.to_s(:no_timezone)
 
-      get api_v1_invoices_path, headers: {
+      create(:invoice, invoice_date: start_date)
+      create(:invoice, invoice_date: end_date)
+
+      get api_v1_invoices_path(
+        start_date: start_date,
+        end_date: end_date
+      ), headers: {
         Authorization: token
       }
 
       expect(response).to have_http_status(:ok)
-      expect(json.count).to be(3)
+      expect(json.count).to be(2)
     end
 
     context 'when not exist token' do
