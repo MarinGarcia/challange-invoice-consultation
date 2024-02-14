@@ -15,13 +15,11 @@ ActiveRecord::Schema.define(version: 2024_02_14_003904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "invoices", force: :cascade do |t|
+  create_table "invoices", id: :serial, force: :cascade do |t|
     t.string "invoice_number"
     t.decimal "total"
     t.datetime "invoice_date"
     t.string "status"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
